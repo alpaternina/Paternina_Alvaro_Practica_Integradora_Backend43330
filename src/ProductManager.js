@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 class ProductManager {
   id = 1;
@@ -7,6 +7,10 @@ class ProductManager {
   }
   
   async addProduct(productoDato) {
+    
+    try {
+
+    
     if (!fs.existsSync(this.path)) {
       await fs.promises.writeFile(this.path, '[]');
     }
@@ -35,6 +39,9 @@ class ProductManager {
         return console.log('Producto adicionado');
       }
     }
+    } catch (error){
+      console.log(error);
+    }
   }
 
   async getProducts() {
@@ -50,13 +57,16 @@ class ProductManager {
 
   
   async getProductById(id) {
+
+    try{
+
+    
     if (!fs.existsSync(this.path)) {
       await fs.promises.writeFile(this.path, '[]');
     }
     let producto = [];
     let productoContenido = await fs.promises.readFile(this.path, 'utf-8');
     producto = JSON.parse(productoContenido);
-
     const productoEncontrado = producto.find((item) => item.id == id);
     if (productoEncontrado) {
       console.log('El producto encontrado es ', productoEncontrado);
@@ -64,52 +74,67 @@ class ProductManager {
     } else {
       console.log('No ha sido encontrado el Producto', id);
     }
+  } catch (error){
+    console.log(error);
+  } 
+
+  }
+
+    
+
+async updateProduct(id, modifyProduct) {
+  try {
+    if (!fs.existsSync(this.path)) {
+      await fs.promises.writeFile(this.path, '[]');
+    }
+    let producto = [];
+    let productoContenido = await fs.promises.readFile(this.path, 'utf-8');
+    producto = JSON.parse(productoContenido);
+
+    const { title, description, price, thumbnail, stock } = modifyProduct;
+    let indexProduct = producto.findIndex((index) => index.id === id);
+    if (indexProduct !== -1) {
+      producto[indexProduct].title = title || producto[indexProduct].title;
+      producto[indexProduct].description = description || producto[indexProduct].description;
+      producto[indexProduct].price = price || producto[indexProduct].price;
+      producto[indexProduct].thumbnail = thumbnail || producto[indexProduct].thumbnail;
+      producto[indexProduct].stock = stock || producto[indexProduct].stock;
+
+      let productString = JSON.stringify(producto, null, 2);
+      await fs.promises.writeFile(this.path, productString);
+      return 'Producto Modificado';
+    } else {
+      return 'El producto no fue encontrado';
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 
-const product1 = {
-  title: 'producto prueba',
-  description: 'Este es un producto prueba',
-  price: 10,
-  thumbnail: 'Sin imagen',
-  code: 'abc123',
-  stock: 7,
-};
+async deleteProduct(id) {
+  try {
+    if (!fs.existsSync(this.path)) {
+      await fs.promises.writeFile(this.path, '[]');
+    }
+    let producto = [];
+    let productoContenido = await fs.promises.readFile(this.path, 'utf-8');
+    producto = JSON.parse(productoContenido);
 
-const product2 = {
-  title: 'producto prueba 2',
-  description: 'Este es un producto prueba 2',
-  price: 10,
-  thumbnail: 'Sin imagen',
-  code: 'abc124',
-  stock: 15,
-};
+    let indexProduct = producto.findIndex((index) => index.id === id);
+    if (indexProduct !== -1) {
+      producto.splice(indexProduct, 1);
+      let productString = JSON.stringify(producto, null, 2);
+      await fs.promises.writeFile(this.path, productString);
+      return 'Producto eliminado!';
+    } else {
+      return 'El producto no fue encontrado';
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+}
 
 const productManager = new ProductManager('products.json');
+export default ProductManager;
 
-productManager
-  .addProduct(product1)
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-productManager
-  .addProduct(product2)
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => {
-    console.log(error);
-  }); 
-
-productManager
-  .getProducts()
-  .then((result) => console.log(result))
-  .catch((error) => console.log(error));
- 
-productManager
-  .getProductById(0)
-  .then((result) => console.log(result))
-  .catch((error) => console.log(error));

@@ -1,0 +1,92 @@
+[
+  {
+    "id": 0,
+    "title": "Bomba OH1",
+    "description": "Bomba centrifuga en voladizo OH1",
+    "price": 3.000,
+    "thumbnail": "image.jpg",
+    "code": "OH1",
+    "stock": 10
+  },
+  {
+    "id": 1,
+    "title": "Bomba OH2",
+    "description": "Bomba centrifuga en voladizo OH2",
+    "price": 5.000,
+    "thumbnail": "image.jpg",
+    "code": "OH2",
+    "stock": 5
+  },
+  {
+    "id": 2,
+    "title": "Bomba OH3",
+    "description": "Bomba centrifuga en voladizo OH3",
+    "price": 6.000,
+    "thumbnail": "image.jpg",
+    "code": "OH3",
+    "stock": 7
+  },
+  {
+    "id": 3,
+    "title": "Bomba BB1",
+    "description": "Bomba centrifuga apoyada entre cojinetes BB1",
+    "price": 7.000,
+    "thumbnail": "image.jpg",
+    "code": "BB1",
+    "stock": 15
+  },
+  {
+    "id": 4,
+    "title": "Bomba BB2",
+    "description": "Bomba centrifuga apoyada entre cojinetes BB2",
+    "price": 15.000,
+    "thumbnail": "image.jpg",
+    "code": "BB2",
+    "stock": 3
+  },
+  {
+    "id": 5,
+    "title": "Bomba BB3",
+    "description": "Bomba centrifuga apoyada entre cojinetes multietapa BB3",
+    "price": 20.000,
+    "thumbnail": "image.jpg",
+    "code": "UTD23",
+    "stock": 12
+  },
+  {
+    "id": 6,
+    "title": "Bomba BB5",
+    "description": "Bomba centrifuga apoyada entre cojinetes multietapa BB5",
+    "price": 25.000,
+    "thumbnail": "image.jpg",
+    "code": "BB5",
+    "stock": 4
+  },
+  {
+    "id": 7,
+    "title": "Bomba VS1",
+    "description": "Bomba centrifuga vertical VS1",
+    "price": 16.000,
+    "thumbnail": "image.jpg",
+    "code": "VS1",
+    "stock": 8
+  },
+  {
+    "id": 8,
+    "title": "Bomba VS4",
+    "description": "Bomba centrifuga vertical VS4",
+    "price": 22.000,
+    "thumbnail": "image.jpg",
+    "code": "VS4",
+    "stock": 9
+  },
+  {
+    "id": 9,
+    "title": "Bomba VS6",
+    "description": "Bomba centrifuga vertical VS6",
+    "price": 30.000,
+    "thumbnail": "image.jpg",
+    "code": "VS6",
+    "stock": 2
+  }
+]
