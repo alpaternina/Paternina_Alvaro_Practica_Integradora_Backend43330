@@ -6,7 +6,9 @@
     "price": 3.000,
     "thumbnail": "image.jpg",
     "code": "OH1",
-    "stock": 10
+    "stock": 10,
+    "category": "Bomba OH",
+    "status" : true
   },
   {
     "id": 1,
@@ -15,7 +17,9 @@
     "price": 5.000,
     "thumbnail": "image.jpg",
     "code": "OH2",
-    "stock": 5
+    "stock": 5,
+    "category": "Bomba OH",
+    "status" : true
   },
   {
     "id": 2,
@@ -24,7 +28,9 @@
     "price": 6.000,
     "thumbnail": "image.jpg",
     "code": "OH3",
-    "stock": 7
+    "stock": 7,
+    "category": "Bomba OH",
+    "status" : true
   },
   {
     "id": 3,
@@ -33,7 +39,9 @@
     "price": 7.000,
     "thumbnail": "image.jpg",
     "code": "BB1",
-    "stock": 15
+    "stock": 15,
+    "category": "Bomba BB",
+    "status" : true
   },
   {
     "id": 4,
@@ -42,7 +50,9 @@
     "price": 15.000,
     "thumbnail": "image.jpg",
     "code": "BB2",
-    "stock": 3
+    "stock": 3,
+    "category": "Bomba BB",
+    "status" : true
   },
   {
     "id": 5,
@@ -51,7 +61,9 @@
     "price": 20.000,
     "thumbnail": "image.jpg",
     "code": "UTD23",
-    "stock": 12
+    "stock": 12,
+    "category": "Bomba BB",
+    "status" : true
   },
   {
     "id": 6,
@@ -60,7 +72,9 @@
     "price": 25.000,
     "thumbnail": "image.jpg",
     "code": "BB5",
-    "stock": 4
+    "stock": 4,
+    "category": "Bomba BB",
+    "status" : true
   },
   {
     "id": 7,
@@ -69,7 +83,9 @@
     "price": 16.000,
     "thumbnail": "image.jpg",
     "code": "VS1",
-    "stock": 8
+    "stock": 8,
+    "category": "Bomba VS",
+    "status" : true
   },
   {
     "id": 8,
@@ -78,7 +94,9 @@
     "price": 22.000,
     "thumbnail": "image.jpg",
     "code": "VS4",
-    "stock": 9
+    "stock": 9,
+    "category": "Bomba VS",
+    "status" : true
   },
   {
     "id": 9,
@@ -87,6 +105,8 @@
     "price": 30.000,
     "thumbnail": "image.jpg",
     "code": "VS6",
-    "stock": 2
+    "stock": 2,
+    "category": "Bomba VS",
+    "status" : true
   }
 ]
