@@ -22,6 +22,19 @@
     },
     {
       "idCart": 3,
+      "products": [
+        {
+          "idProduct": 10,
+          "quantity": 2
+        },
+        {
+          "idProduct": 9,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "idCart": 4,
       "products": []
     }
   ]
