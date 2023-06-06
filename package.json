@@ -20,6 +20,8 @@
   "homepage": "https://github.com/alpaternina/Paternina_Alvaro_desafio1_Backend43330#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "mongoose": "^7.2.2"
   }
 }
