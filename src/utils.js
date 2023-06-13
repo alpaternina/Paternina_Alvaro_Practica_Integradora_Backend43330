@@ -12,9 +12,6 @@ const storage = multer.diskStorage({
 export const uploader = multer({ storage });
 
 
-/***************************** __dirname *****************************/
-// https://flaviocopes.com/fix-dirname-not-defined-es-module-scope/
-
 import path from 'path';
 import { fileURLToPath } from 'url';
 export const __filename = fileURLToPath(import.meta.url);
@@ -34,7 +31,7 @@ export async function connectMongo() {
 
 /******************************* Socket *******************************/
 import { Server } from 'socket.io';
-import ProductManager from './productManager.js';
+import ProductManager from './DAO/fileSystem/productManager.js';
 import { ChatModel } from './DAO/models/chat.model.js';
 
 export function connectSocket(httpServer) {

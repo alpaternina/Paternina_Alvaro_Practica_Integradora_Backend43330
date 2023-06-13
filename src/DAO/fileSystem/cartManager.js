@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-class CartsManager {
+class CartManager {
   id = 1;
   constructor(path) {
     this.path = path;
@@ -40,12 +40,10 @@ class CartsManager {
         await fs.promises.writeFile(this.patch, '[]');
       }
 
-
       let carts = [];
       let cartContent = await fs.promises.readFile(this.path, 'utf-8');
       carts = JSON.parse(cartContent);
 
-      /* Buscamos un cart con ID del parametro */
       const cartFound = carts.find((item) => item.idCart == cartId);
       if (cartFound) {
         const productFound = cartFound.products.find((item) => item.idProduct == productId);
@@ -57,17 +55,17 @@ class CartsManager {
           carts.splice(indexCart, 1, cartFound);
           let cartString = JSON.stringify(carts, null, 2);
           await fs.promises.writeFile(this.path, cartString);
-          return 'Agregaste un producto al carrito';
+          return 'You added an additional quantity of the product to the cart';
         } else {
           cartFound.products.push({ idProduct: productId, quantity: 1 });
           const indexCart = carts.indexOf(cartFound);
           carts.splice(indexCart, 1, cartFound);
           let cartString = JSON.stringify(carts, null, 2);
           await fs.promises.writeFile(this.path, cartString);
-          return 'Se agrega producto al carrito';
+          return 'Product added to the cart';
         }
       } else {
-        return 'No existe el carrito';
+        return 'Cart not found';
       }
     } catch (error) {
       console.log(error);
@@ -110,4 +108,4 @@ class CartsManager {
   }
 }
 
-export default CartsManager;
+export default CartManager;
