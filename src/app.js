@@ -37,7 +37,7 @@ app.use(cookieParser());
 /* Session */
 app.use(
   session({
-    store: MongoStore.create({ mongoUrl: 'mongodb+srv://maurogarrodev:Aguantela73@coderbackend.1nd8mzz.mongodb.net/ecommerce', ttl: 7200 }),
+    store: MongoStore.create({ mongoUrl: 'mongodb+srv://alpaternina:Mongo2023@cluster0.5txvpjp.mongodb.net/?retryWrites=true&w=majority', ttl: 7200 }),
     secret: 'un-re-secreto',
     resave: true,
     saveUninitialized: true,
