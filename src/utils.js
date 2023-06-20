@@ -24,7 +24,7 @@ export const __dirname = path.dirname(__filename);
 import { connect } from 'mongoose';
 export async function connectMongo() {
   try {
-    await connect('mongodb+srv://alpaternina:Mongo2023@cluster0.5txvpjp.mongodb.net/?retryWrites=true&w=majority');
+    await connect('mongodb+srv://alpaternina:WAb5c9dKZIDn9FS5@cluster0.5txvpjp.mongodb.net/?retryWrites=true&w=majority');
     console.log('Plug to mongo!');
   } catch (error) {
     console.log(error);
