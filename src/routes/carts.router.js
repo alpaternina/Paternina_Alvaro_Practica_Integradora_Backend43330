@@ -1,7 +1,6 @@
 import express from 'express';
 import { CartService } from '../services/carts.service.js';
 
-
 const cartService = new CartService();
 
 export const cartsRouter = express.Router();
@@ -49,7 +48,6 @@ cartsRouter.put('/:cid/products/:pid', async (req, res) => {
   }
 });
 
-/* Continuar corrigiendo este */
 cartsRouter.put('/:cid', async (req, res) => {
   try {
     const { cid } = req.params;

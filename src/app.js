@@ -3,7 +3,9 @@ import cookieParser from 'cookie-parser';
 import express from 'express';
 import handlebars from 'express-handlebars';
 import session from 'express-session';
+import passport from 'passport';
 import path from 'path';
+import { iniPassport } from './config/passport.config.js';
 import { authRouter } from './routes/auth.router.js';
 import { cartsRouter } from './routes/carts.router.js';
 import { chatRouter } from './routes/chats.router.js';
@@ -12,7 +14,8 @@ import { cartsHtml } from './routes/homeCarts.router.js';
 import { productsHtml } from './routes/homeProducts.router.js';
 import { productsRouter } from './routes/products.router.js';
 import { productsRealTime } from './routes/realTimeProducts.router.js';
-import { sessionRouter } from './routes/session.router.js';
+import { sessionsRouter } from './routes/sessions.router.js';
+import { viewsRouter } from './routes/views.router.js';
 import { __dirname, connectMongo, connectSocket } from './utils.js';
 
 const app = express();
@@ -44,6 +47,11 @@ app.use(
   })
 );
 
+/* Passport */
+iniPassport();
+app.use(passport.initialize());
+app.use(passport.session());
+
 /* Api Rest JSON */
 app.use('/api/products', productsRouter);
 app.use('/api/carts', cartsRouter);
@@ -62,7 +70,7 @@ app.use('/auth', authRouter);
 app.use('/api/cookies', coockieRouter);
 
 /* HTML Render Session*/
-app.use('/api/session', sessionRouter);
+app.use('/api/sessions', sessionsRouter);
 
 /* Config Handlebars */
 app.engine('handlebars', handlebars.engine());

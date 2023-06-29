@@ -7,7 +7,7 @@ const schema = new Schema({
   price: { type: Number, required: true, max: 100 },
   thumbnail: { type: String, required: false, max: 100 },
   code: { type: String, required: true, max: 10, unique: true },
-  stock: { type: Number, required: true, max: 10 },
+  stock: { type: Number, required: true, max: 100 },
   category: { type: String, required: true, max: 100 },
   status: { type: Boolean, required: true, max: 5 },
 });

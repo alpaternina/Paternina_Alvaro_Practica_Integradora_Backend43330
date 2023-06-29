@@ -17,7 +17,7 @@ const schema = new Schema({
     max: 100,
     unique: true,
   },
-  pass: {
+  password: {
     type: String,
     required: true,
     max: 100,
@@ -25,6 +25,7 @@ const schema = new Schema({
   isAdmin: {
     type: Boolean,
     required: true,
+    default: false,
   },
 });
 export const UserModel = model('users', schema);
